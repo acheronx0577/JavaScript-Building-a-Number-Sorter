@@ -26,19 +26,6 @@ Live Demo: https://acheronx0577.github.io/JavaScript-Building-a-Number-Sorter
 
 ---
 
-## ✨ Features
-
-- **🔄 Four Sorting Algorithms**
-  - Bubble Sort, Selection Sort, Insertion Sort, Quick Sort
-- **📊 Real-time Performance Tracking**
-  - Execution time and comparison counts
-- **🎨 Modern Clean Interface**
-  - Blue/green color scheme with smooth animations
-- **⚡ Interactive Controls**
-  - Random number generation, custom inputs, sort order selection
-- **📱 Fully Responsive**
-  - Works on all device sizes
-
 ## 🎮 How to Use
 
 - Enter numbers (0-100) in the input fields
@@ -102,14 +89,6 @@ Just open `index.html` in your favorite browser 🌐 and start playing!
 - `index.html` - Application structure
 - `script.js` - Sorting algorithms & logic
 - `styles.css` - Modern responsive styling
-
-## 🛠️ Technical Highlights
-
-- Four complete sorting algorithm implementations
-- Real-time performance measurement
-- Input validation (0-100 range)
-- Mobile-first responsive design
-- Smooth animations and transitions
 
 ## 🤝 Contributing
 
