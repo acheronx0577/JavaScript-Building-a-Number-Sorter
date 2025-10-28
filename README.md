@@ -22,7 +22,7 @@ This repository contains the complete portfolio of projects needed to demonstrat
 
 <img width="897" height="1101" alt="Screenshot 2025-10-28 124031" src="https://github.com/user-attachments/assets/eb15ce70-4744-4b9f-9b6f-5c62083a1fb4" />
 
-Live Demo: git@github.com:acheronx0577/JavaScript-Building-a-Number-Sorter.git
+Live Demo: https://acheronx0577.github.io/JavaScript-Building-a-Number-Sorter
 
 ---
 
@@ -81,12 +81,12 @@ Live Demo: git@github.com:acheronx0577/JavaScript-Building-a-Number-Sorter.git
 
 ### 1️⃣ Clone this repo
 ```
-git clone git@github.com:acheronx0577/JavaScript-Building-a-Spam-Filter.git
+git clone git@github.com:acheronx0577/JavaScript-Building-a-Number-Sorter.git
 ```
 
 ### 2️⃣ Open the project folder
 ```
-cd JavaScript-Building-a-Spam-Filter
+cd JavaScript-Building-a-Number-Sorter
 ```
 
 ### 3️⃣ Run the file
