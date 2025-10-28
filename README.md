@@ -39,6 +39,14 @@ Live Demo: https://acheronx0577.github.io/JavaScript-Building-a-Number-Sorter
 - **📱 Fully Responsive**
   - Works on all device sizes
 
+## 🎮 How to Use
+
+- Enter numbers (0-100) in the input fields
+- Select a sorting algorithm
+- Choose ascending or descending order
+- Click "🔄 Sort Numbers" to see results
+- Use "🎲 Randomize" for test data or "🗑️ Clear" to reset
+
 ## 🎨 Color Scheme
 
 - **Primary**: Deep Blue (#4a6fa5 to #385d8a gradient)
@@ -88,14 +96,6 @@ git clone git@github.com:acheronx0577/JavaScript-Building-a-Number-Sorter.git
 Just open `index.html` in your favorite browser 🌐 and start playing!
 
 ---
-
-## 🎮 How to Use
-
-- Enter numbers (0-100) in the input fields
-- Select a sorting algorithm
-- Choose ascending or descending order
-- Click "🔄 Sort Numbers" to see results
-- Use "🎲 Randomize" for test data or "🗑️ Clear" to reset
 
 ## 📁 Project Structure
 
