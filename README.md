@@ -22,7 +22,7 @@ This repository contains the complete portfolio of projects needed to demonstrat
 
 <img width="897" height="1101" alt="Screenshot 2025-10-28 124031" src="https://github.com/user-attachments/assets/eb15ce70-4744-4b9f-9b6f-5c62083a1fb4" />
 
-Live Demo: https://acheronx0577.github.io/JavaScript-Building-a-Spam-Filter
+Live Demo: git@github.com:acheronx0577/JavaScript-Building-a-Number-Sorter.git
 
 ---
 
