@@ -81,15 +81,10 @@ Live Demo: https://acheronx0577.github.io/JavaScript-Building-a-Number-Sorter
 
 ### 1️⃣ Clone this repo
 ```
-git clone git@github.com:acheronx0577/JavaScript-Building-a-Number-Sorter.git
+git clone git@github.com:acheronx0577/JavaScript-Random-Background-Color-Changer.git
 ```
 
-### 2️⃣ Open the project folder
-```
-cd JavaScript-Building-a-Number-Sorter
-```
-
-### 3️⃣ Run the file
+### 2️⃣ Run the file
 Just open `index.html` in your favorite browser 🌐 and start playing!
 
 ---
