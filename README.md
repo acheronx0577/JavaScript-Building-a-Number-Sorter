@@ -84,12 +84,6 @@ Just open `index.html` in your favorite browser 🌐 and start playing!
 
 ---
 
-## 📁 Project Structure
-
-- `index.html` - Application structure
-- `script.js` - Sorting algorithms & logic
-- `styles.css` - Modern responsive styling
-
 ## 🤝 Contributing
 
 Fork the repo and submit PRs for:
