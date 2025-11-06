@@ -22,6 +22,10 @@ const algorithmBtns = document.querySelectorAll('.algorithm-btn');
 const algorithmName = document.getElementById('algorithm-name');
 const timeTaken = document.getElementById('time-taken');
 const comparisons = document.getElementById('comparisons');
+const outputStatus = document.getElementById('output-status');
+const globalStatus = document.getElementById('global-status');
+const currentAlgo = document.getElementById('current-algo');
+const sortOrderDisplay = document.getElementById('sort-order');
 
 // Global variables
 let currentAlgorithm = 'bubble';
@@ -38,11 +42,20 @@ algorithmBtns.forEach(btn => {
         btn.classList.add('active');
         currentAlgorithm = btn.dataset.algorithm;
         algorithmName.textContent = formatAlgorithmName(currentAlgorithm);
+        currentAlgo.textContent = formatAlgorithmName(currentAlgorithm);
+    });
+});
+
+// Update sort order display
+document.querySelectorAll('input[name="sort-order"]').forEach(radio => {
+    radio.addEventListener('change', (e) => {
+        sortOrderDisplay.textContent = e.target.value.toUpperCase();
     });
 });
 
 // Initialize
 algorithmName.textContent = formatAlgorithmName(currentAlgorithm);
+currentAlgo.textContent = formatAlgorithmName(currentAlgorithm);
 
 // Sorting Functions
 function bubbleSort(arr) {
@@ -147,11 +160,18 @@ function sortNumbers() {
     const numbers = getInputNumbers();
     
     if (!validateInputs(numbers)) {
-        alert('Please enter valid numbers between 0 and 100');
+        alert('ERROR: Please enter valid numbers between 0 and 100');
         return;
     }
     
     const sortOrder = document.querySelector('input[name="sort-order"]:checked').value;
+    
+    // Update UI states
+    outputStatus.textContent = 'PROCESSING';
+    outputStatus.style.color = 'var(--accent-warning)';
+    globalStatus.textContent = 'SORTING';
+    sortBtn.disabled = true;
+    
     const startTime = performance.now();
     
     let sortedNumbers;
@@ -182,6 +202,12 @@ function sortNumbers() {
     displayResults(sortedNumbers);
     updateStats(executionTime, comparisonCount);
     
+    // Update final status
+    outputStatus.textContent = 'COMPLETED';
+    outputStatus.style.color = 'var(--accent-success)';
+    globalStatus.textContent = 'READY';
+    sortBtn.disabled = false;
+    
     // Add animation to output numbers
     animateResults();
 }
@@ -210,6 +236,7 @@ function generateRandomNumbers() {
     numberInputs.forEach(input => {
         input.value = Math.floor(Math.random() * 101); // 0-100
     });
+    globalStatus.textContent = 'RANDOMIZED';
 }
 
 function clearInputs() {
@@ -222,27 +249,29 @@ function clearInputs() {
     });
     
     updateStats(0, 0);
+    outputStatus.textContent = 'READY';
+    outputStatus.style.color = 'var(--accent-cyan)';
+    globalStatus.textContent = 'CLEARED';
 }
 
 function formatAlgorithmName(algorithm) {
     const names = {
-        'bubble': 'Bubble Sort',
-        'selection': 'Selection Sort',
-        'insertion': 'Insertion Sort',
-        'quick': 'Quick Sort'
+        'bubble': 'BUBBLE_SORT',
+        'selection': 'SELECTION_SORT',
+        'insertion': 'INSERTION_SORT',
+        'quick': 'QUICK_SORT'
     };
-    return names[algorithm] || 'Bubble Sort';
+    return names[algorithm] || 'BUBBLE_SORT';
 }
 
 function animateResults() {
     outputNumbers.forEach((output, index) => {
-        output.style.transform = 'scale(1.2)';
-        output.style.background = 'var(--secondary)';
-        
         setTimeout(() => {
-            output.style.transform = 'scale(1)';
-            output.style.background = 'var(--primary)';
-        }, 300 + (index * 100));
+            output.classList.add('number-sorted');
+            setTimeout(() => {
+                output.classList.remove('number-sorted');
+            }, 300);
+        }, index * 100);
     });
 }
 
