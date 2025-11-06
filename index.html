@@ -3,113 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" />
-    <title>Number Sorter - Sort Your Numbers</title>
+    <title>NUMBER_SORTER</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>🔢 Number Sorter</h1>
-            <p>Easily sort numbers in ascending or descending order</p>
+    <div class="terminal">
+        <header class="terminal-header">
+            <div class="window-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+            </div>
+            <div class="title-bar">
+                <span class="prompt">></span>
+                <span class="title">NUMBER_SORTER</span>
+                <span class="cursor">_</span>
+            </div>
         </header>
 
-        <main class="main-content">
-            <section class="input-section">
-                <h2 class="section-title">Input Numbers</h2>
-                <div class="input-container">
-                    <span class="bracket">[</span>
-                    <input type="number" class="number-input" id="num1" value="8" min="0" max="100">
-                    <span class="comma">,</span>
-                    <input type="number" class="number-input" id="num2" value="2" min="0" max="100">
-                    <span class="comma">,</span>
-                    <input type="number" class="number-input" id="num3" value="4" min="0" max="100">
-                    <span class="comma">,</span>
-                    <input type="number" class="number-input" id="num4" value="1" min="0" max="100">
-                    <span class="comma">,</span>
-                    <input type="number" class="number-input" id="num5" value="3" min="0" max="100">
-                    <span class="bracket">]</span>
+        <main class="terminal-body">
+            <div class="app-header">
+                <h1 class="app-title">~/algorithms/number_sorter</h1>
+                <div class="status-bar">
+                    <span class="status-item">READY</span>
+                    <span class="status-item">v1.0.0</span>
+                    <span class="status-item">UTF-8</span>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label class="input-label">
+                        <span class="label-text">INPUT_NUMBERS</span>
+                        <span class="label-desc">[0-100]</span>
+                    </label>
+                    <div class="array-container">
+                        <span class="bracket">[</span>
+                        <input type="number" class="terminal-input array-input" id="num1" value="8" min="0" max="100">
+                        <span class="comma">,</span>
+                        <input type="number" class="terminal-input array-input" id="num2" value="2" min="0" max="100">
+                        <span class="comma">,</span>
+                        <input type="number" class="terminal-input array-input" id="num3" value="4" min="0" max="100">
+                        <span class="comma">,</span>
+                        <input type="number" class="terminal-input array-input" id="num4" value="1" min="0" max="100">
+                        <span class="comma">,</span>
+                        <input type="number" class="terminal-input array-input" id="num5" value="3" min="0" max="100">
+                        <span class="bracket">]</span>
+                    </div>
                 </div>
 
                 <div class="sort-options">
                     <label class="radio-label">
                         <input type="radio" name="sort-order" value="ascending" checked>
                         <span class="radio-custom"></span>
-                        Ascending Order
+                        <span class="radio-text">ASCENDING_ORDER</span>
                     </label>
                     <label class="radio-label">
                         <input type="radio" name="sort-order" value="descending">
                         <span class="radio-custom"></span>
-                        Descending Order
+                        <span class="radio-text">DESCENDING_ORDER</span>
                     </label>
                 </div>
 
-                <div class="buttons-container">
-                    <button class="btn btn-primary" id="sort-btn">
-                        <span>🔄 Sort Numbers</span>
+                <div class="button-group">
+                    <button class="terminal-btn primary" id="sort-btn">
+                        <span class="btn-text">[SORT_NUMBERS]</span>
                     </button>
-                    <button class="btn btn-secondary" id="random-btn">
-                        <span>🎲 Randomize</span>
+                    <button class="terminal-btn secondary" id="random-btn">
+                        <span class="btn-text">[RANDOMIZE]</span>
                     </button>
-                    <button class="btn btn-outline" id="clear-btn">
-                        <span>🗑️ Clear</span>
+                    <button class="terminal-btn outline" id="clear-btn">
+                        <span class="btn-text">[CLEAR]</span>
                     </button>
                 </div>
-            </section>
+            </div>
 
-            <section class="output-section">
-                <h2 class="section-title">Sorted Numbers</h2>
-                <div class="output-container">
-                    <span class="bracket">[</span>
-                    <span class="output-number" id="output1">-</span>
-                    <span class="comma">,</span>
-                    <span class="output-number" id="output2">-</span>
-                    <span class="comma">,</span>
-                    <span class="output-number" id="output3">-</span>
-                    <span class="comma">,</span>
-                    <span class="output-number" id="output4">-</span>
-                    <span class="comma">,</span>
-                    <span class="output-number" id="output5">-</span>
-                    <span class="bracket">]</span>
+            <div class="output-panel">
+                <div class="output-header">
+                    <span class="output-title">SORTED_OUTPUT</span>
+                    <span class="output-status" id="output-status">READY</span>
                 </div>
-                <div class="algorithm-info">
-                    <p>Using <strong id="algorithm-name">Bubble Sort</strong> algorithm</p>
-                    <div class="stats">
-                        <span>Time: <span id="time-taken">0</span>ms</span>
-                        <span>Comparisons: <span id="comparisons">0</span></span>
+                <div class="output-content">
+                    <div class="array-container">
+                        <span class="bracket">[</span>
+                        <span class="output-number" id="output1">-</span>
+                        <span class="comma">,</span>
+                        <span class="output-number" id="output2">-</span>
+                        <span class="comma">,</span>
+                        <span class="output-number" id="output3">-</span>
+                        <span class="comma">,</span>
+                        <span class="output-number" id="output4">-</span>
+                        <span class="comma">,</span>
+                        <span class="output-number" id="output5">-</span>
+                        <span class="bracket">]</span>
+                    </div>
+                    <div class="algorithm-info">
+                        <div class="info-row">
+                            <span>ALGORITHM:</span>
+                            <span class="algorithm-name" id="algorithm-name">BUBBLE_SORT</span>
+                        </div>
+                        <div class="stats">
+                            <span class="stat">TIME: <span id="time-taken">0</span>ms</span>
+                            <span class="stat">COMPARISONS: <span id="comparisons">0</span></span>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <section class="algorithms-section">
-                <h2 class="section-title">Sorting Algorithms</h2>
-                <div class="algorithms-grid">
-                    <button class="algorithm-btn active" data-algorithm="bubble">
-                        <span>Bubble Sort</span>
-                        <small>Simple but slow</small>
-                    </button>
-                    <button class="algorithm-btn" data-algorithm="selection">
-                        <span>Selection Sort</span>
-                        <small>Finds minimums</small>
-                    </button>
-                    <button class="algorithm-btn" data-algorithm="insertion">
-                        <span>Insertion Sort</span>
-                        <small>Good for small lists</small>
-                    </button>
-                    <button class="algorithm-btn" data-algorithm="quick">
-                        <span>Quick Sort</span>
-                        <small>Fast divide & conquer</small>
-                    </button>
+            <div class="info-panel">
+                <div class="info-header">
+                    <span class="info-title">SORTING_ALGORITHMS</span>
+                    <span class="info-badge">4_ALGORITHMS</span>
                 </div>
-            </section>
+                <div class="info-content">
+                    <div class="algorithms-grid">
+                        <button class="algorithm-btn active" data-algorithm="bubble">
+                            <span class="algo-name">BUBBLE_SORT</span>
+                            <span class="algo-desc">SIMPLE_BUT_SLOW</span>
+                        </button>
+                        <button class="algorithm-btn" data-algorithm="selection">
+                            <span class="algo-name">SELECTION_SORT</span>
+                            <span class="algo-desc">FINDS_MINIMUMS</span>
+                        </button>
+                        <button class="algorithm-btn" data-algorithm="insertion">
+                            <span class="algo-name">INSERTION_SORT</span>
+                            <span class="algo-desc">GOOD_FOR_SMALL_LISTS</span>
+                        </button>
+                        <button class="algorithm-btn" data-algorithm="quick">
+                            <span class="algo-name">QUICK_SORT</span>
+                            <span class="algo-desc">FAST_DIVIDE_CONQUER</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </main>
 
-        <footer class="footer">
-            <p>© 2024 Number Sorter freeCodeCamp | Built with ❤️ for learning</p>
+        <footer class="terminal-footer">
+            <div class="footer-stats">
+                <span class="stat">STATUS: <span id="global-status">READY</span></span>
+                <span class="stat">ALGORITHM: <span id="current-algo">BUBBLE_SORT</span></span>
+                <span class="stat">ORDER: <span id="sort-order">ASCENDING</span></span>
+            </div>
         </footer>
     </div>
 
     <script src="script.js"></script>
 </body>
-
 </html>
