@@ -20,7 +20,7 @@ This repository contains the complete portfolio of projects needed to demonstrat
 
 ## 📸 Application Preview
 
-<img width="897" height="1101" alt="Screenshot 2025-10-28 124031" src="https://github.com/user-attachments/assets/eb15ce70-4744-4b9f-9b6f-5c62083a1fb4" />
+<img width="969" height="952" alt="image" src="https://github.com/user-attachments/assets/8213427e-d0f7-44b7-b56e-823625e9d595" />
 
 Live Demo: https://acheronx0577.github.io/JavaScript-Building-a-Number-Sorter
 
